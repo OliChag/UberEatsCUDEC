@@ -1,6 +1,6 @@
 db.collection("platillos").onSnapshot((coleccion) => {
      coleccion.forEach((registro) => {
-          console.log(registro)
+          MostrarPlatillo(registro.data(), registro.id);
      });
 
   });
