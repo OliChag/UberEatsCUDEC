@@ -18,8 +18,18 @@ function MostrarPlatillo(platillo, id) {
    <div class='recipe-ingredients'>
     ${platillo.ingredientes}
    </div>
+   <div class='recipe-price'>
+    ${'$' + platillo.precio}
+   </div>
 
   </div>
   `;
   document.querySelector(".recipes").innerHTML += contenido;
+}
+
+function actualizarPlatillo(platillo, id) {
+  let tarjeta = document.getElementById(`${id}`);
+  tarjeta.querySelector(".recipe-title").innerHTML = platillo.nombre;
+  tarjeta.querySelector(".recipe-ingredients").innerHTML = platillo.ingredientes;
+  tarjeta.querySelector(".recipe-price").innerHTML = '$' + platillo.precio;
 }
