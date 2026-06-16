@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function MostrarPlatillo(platillo, id) {
   contenido = `
-  <div class='card-panel recipe white row ' id='${id}'>
+  <div class='card-panel recipe white row ' id='${id}' data-id='${id}'>
   <div class='recipe-details'>
    <div class='recipe-title'>
     ${platillo.nombre}
@@ -21,6 +21,9 @@ function MostrarPlatillo(platillo, id) {
    <div class='recipe-price'>
     ${'$' + platillo.precio}
    </div>
+   <div class='recipe-delete'>
+        <i class='material-icons' data-id='${id}'>delete_outline</i>
+      </div>
 
   </div>
   `;
@@ -32,4 +35,9 @@ function actualizarPlatillo(platillo, id) {
   tarjeta.querySelector(".recipe-title").innerHTML = platillo.nombre;
   tarjeta.querySelector(".recipe-ingredients").innerHTML = platillo.ingredientes;
   tarjeta.querySelector(".recipe-price").innerHTML = '$' + platillo.precio;
+}
+
+const borrarPlatillo = (id) => {
+  const platillo = document.querySelector(`.recipe[data-id='${id}']`);
+  platillo.remove();
 }
