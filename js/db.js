@@ -1,11 +1,7 @@
 db.collection("platillos").onSnapshot((coleccion) => {
      coleccion.docChanges().forEach((registro) => {
-        if (registro.type === "added" || registro.type === "modified") {
+        if (registro.type === "added") {
           MostrarPlatillo(registro.doc.data(), registro.doc.id);
-          const selectPlatillo = document.getElementById("listaPlatillo");
-          if (selectPlatillo) {
-            agregarPlatillo(registro.doc.data(), registro.doc.id);
-          }
         }
         if (registro.type === "modified") {
             actualizarPlatillo(registro.doc.data(), registro.doc.id);
@@ -17,7 +13,7 @@ db.collection("platillos").onSnapshot((coleccion) => {
 
   });
 
-  const formularioAgregar = document.querySelector("form");
+  const formularioAgregar = document.getElementById("platillonuevo");
   formularioAgregar.addEventListener("submit", (e) => {
     e.preventDefault();
     const platilloNuevo = {
