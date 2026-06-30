@@ -35,3 +35,27 @@ formularioPedido.addEventListener("submit", (e) => {
         alert("Error al realizar el pedido");
     });
 });
+
+document.getElementById("btnDireccion").addEventListener("click", function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(exito, error);
+    }
+    else {
+        alert("La geolocalización no es compatible con este navegador.");
+    }
+});
+
+function error(error) {
+    alert("Error al obtener la ubicación: " + error.message);
+}
+
+function exito(posicion) {
+    alert(posicion.coords.latitude + ", " + posicion.coords.longitude);
+    let latitud = posicion.coords.latitude;
+    let longitud = posicion.coords.longitude;
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitud}&lon=${longitud}&format=json`), {
+    headers: {
+        'User-Agent': 'FoodOli (oliverten23@gmail.com)'
+    }
+  }
+}
