@@ -53,9 +53,17 @@ function exito(posicion) {
     alert(posicion.coords.latitude + ", " + posicion.coords.longitude);
     let latitud = posicion.coords.latitude;
     let longitud = posicion.coords.longitude;
-    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitud}&lon=${longitud}&format=json`), {
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitud}&lon=${longitud}&format=json`, {
     headers: {
         'User-Agent': 'FoodOli (oliverten23@gmail.com)'
     }
-  }
+  })
+  .then(respuesta => respuesta.json())
+  .then(data => {
+    let ciudad = data.address.city;
+    let pais = data.address.country;
+    document.getElementById("direccion").innerHTML = `Ciudad: ${ciudad}, País: ${pais}`;
+    })
+    
+    .catch(error => console.error(error));
 }
