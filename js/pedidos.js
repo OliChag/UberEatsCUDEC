@@ -45,10 +45,6 @@ document.getElementById("btnDireccion").addEventListener("click", function() {
     }
 });
 
-function error(error) {
-    alert("Error al obtener la ubicación: " + error.message);
-}
-
 function exito(posicion) {
     alert(posicion.coords.latitude + ", " + posicion.coords.longitude);
     let latitud = posicion.coords.latitude;
@@ -63,7 +59,17 @@ function exito(posicion) {
     let ciudad = data.address.city;
     let pais = data.address.country;
     document.getElementById("direccion").innerHTML = `Ciudad: ${ciudad}, País: ${pais}`;
+    var map = L.map('map').setView([latitud, longitud], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">'
+    }).addTo(map);
+    var marker = L.marker([latitud, longitud]).addTo(map);
     })
-    
     .catch(error => console.error(error));
+}
+
+function error(error) {
+    alert("Error al obtener la ubicación: " + error.message);
+    console.log(error);
 }
