@@ -62,6 +62,7 @@
         <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
         <label for="ingredients">Ingredientes</label>
       </div>
+      <input id="foto" type="hidden">
       <div class="input-field center">
         <button class="btn-small">Agregar</button>
       </div>
@@ -70,8 +71,11 @@
     <div id="camara">
           <video id="video">No hay video disponible</video>
         </div>
+
         <canvas id="canvas"></canvas>
+        
         <div id="salida">
+          <button type="button" id="btnTomarFoto">Tomar foto</button>
           <img id="foto" src="" alt="Foto del platillo">
         </div>
   </div>

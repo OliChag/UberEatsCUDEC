@@ -19,7 +19,8 @@ db.collection("platillos").onSnapshot((coleccion) => {
     const platilloNuevo = {
       nombre: formularioAgregar.title.value,
       ingredientes: formularioAgregar.ingredients.value,
-      precio: formularioAgregar.price.value
+      precio: formularioAgregar.price.value,
+      imagen: foto.value
     }
     db.collection("platillos").add(platilloNuevo)
     .catch((error) => {
