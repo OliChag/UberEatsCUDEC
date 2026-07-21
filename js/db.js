@@ -20,7 +20,7 @@ db.collection("platillos").onSnapshot((coleccion) => {
       nombre: formularioAgregar.title.value,
       ingredientes: formularioAgregar.ingredients.value,
       precio: formularioAgregar.price.value,
-      imagen: foto.value
+      imagen: document.getElementById("fotoBase64").value
     }
     db.collection("platillos").add(platilloNuevo)
     .catch((error) => {
