@@ -3,5 +3,5 @@ self.addEventListener('install', function(event) {
     caches.open('mi-cache').then(function(cache) {
         return cache.add('index.html');
     })
-    );
-    });
+ );
+});
