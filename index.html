@@ -130,7 +130,7 @@
   <script src="js/index.js"></script>
   <script src="js/db.js"></script>
   <script>  
-    if (type(navigator.serviceWorker) !== 'undefined') {
+    if (typeof(navigator.serviceWorker) !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
     }
   </script>
