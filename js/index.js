@@ -61,7 +61,14 @@ const fotoInput = document.getElementById('fotoBase64');
 const btnFoto = document.getElementById('btnFoto');
 
 btnFoto.addEventListener('click', function() {
-  navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+  navigator.mediaDevices
+  .getUserMedia({
+     video: {
+      facingMode: {
+        ideal: "environment"
+      }
+    },
+       audio: false })
    .then((stream) => {
     video.srcObject = stream;
     video.play();
