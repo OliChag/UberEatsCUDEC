@@ -139,3 +139,86 @@ form .input-field{
   overflow: hidden;
 }
 
+/* Panel para agregar platillos */
+.side-form {
+  width: min(390px, 92vw) !important;
+  padding: 0 !important;
+  background: #f8f8f8;
+}
+
+.side-form form {
+  margin: 0;
+  padding: 28px 24px 18px;
+  background: #ffffff;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.1);
+}
+
+.side-form h6 {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.side-form .input-field {
+  margin-bottom: 24px;
+}
+
+.side-form .input-field input:focus {
+  border-bottom: 2px solid #ff8c1a !important;
+  box-shadow: 0 1px 0 0 #ff8c1a !important;
+}
+
+.side-form .input-field input:focus + label {
+  color: #ff8c1a !important;
+}
+
+/* Botones */
+.side-form button {
+  border-radius: 9px;
+  background: #ff8c1a !important;
+  box-shadow: 0 3px 8px rgba(255, 140, 26, 0.3);
+}
+
+.side-form button:hover {
+  background: #ed7600 !important;
+}
+
+/* Área de cámara */
+.side-form label[for="video"],
+.side-form .camera-title {
+  display: block;
+  margin: 24px 24px 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #444;
+}
+
+#video,
+#foto {
+  display: block;
+  width: calc(100% - 48px);
+  height: 210px;
+  margin: 0 24px 16px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #eeeeee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+#foto[src=""] {
+  display: none;
+}
+
+#btnFoto,
+#btnTomarFoto {
+  margin: 0 0 16px 24px;
+  border-radius: 9px;
+}
+
+/* Botón Agregar centrado */
+.side-form .input-field.center {
+  margin-top: 28px;
+  text-align: center;
+}

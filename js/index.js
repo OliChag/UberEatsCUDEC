@@ -111,7 +111,7 @@ function tomarFoto() {
         canvas.height = height;
         contexto.drawImage(video, 0, 0, width, height);
         const fotoFinal = canvas.toDataURL('image/png');
-        foto.src = fotoFinal;
+        foto.setAttribute('src', fotoFinal);
         foto.style.display = 'block';  // muestra la foto tomada
         video.style.display = 'none';  // oculta la cámara
 
