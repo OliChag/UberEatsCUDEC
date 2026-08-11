@@ -112,12 +112,24 @@
         </div>
 
         <canvas id="canvas"></canvas>
-        
-        <div id="salida">
-          <button type="button" id="btnTomarFoto">Tomar foto</button>
-         <img id="foto" src="" alt="Foto del platillo" style="display: none;">
-        </div>
-  </div>
+       
+  <div id="salida" class="camera-actions">
+  <button
+    type="button"
+    id="btnTomarFoto"
+    class="btn-small waves-effect waves-light"
+  >
+    <i class="material-icons left">camera_alt</i>
+    Tomar foto
+  </button>
+
+  <img
+    id="foto"
+    src=""
+    alt="Foto del platillo"
+    style="display: none;"
+  >
+</div>
 
 
   <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js">
