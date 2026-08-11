@@ -70,7 +70,11 @@ btnFoto.addEventListener('click', function() {
     },
        audio: false })
    .then((stream) => {
+    streamActual = stream;
+    streaming = false;
     video.srcObject = stream;
+    video.style.display = 'block';
+    foto.style.display = 'none';
     video.play();
   }).catch(error => {
     console.log("Error al acceder a la cámara: ", error);
@@ -88,6 +92,17 @@ btnFoto.addEventListener('click', function() {
     }
  })
 
+ let streamActual = null;
+ function detenerCamara() {
+  if (streamActual) {
+    streamActual.getTracks().forEach(track => track.stop());
+    streamActual = null;
+  }
+  video.pause();
+  video.srcObject = null;
+  streaming = false;
+}
+
 function tomarFoto() {
 
   const contexto = canvas.getContext('2d');
@@ -96,12 +111,15 @@ function tomarFoto() {
         canvas.height = height;
         contexto.drawImage(video, 0, 0, width, height);
         const fotoFinal = canvas.toDataURL('image/png');
-        foto.setAttribute('src', fotoFinal);
-       const fotoBase64 = fotoFinal.replace("data:image/png;base64,", "");
-       fotoInput.value = fotoBase64;
-    } else {
-        limpiarFoto()
-    }
+        foto.src = fotoFinal;
+        foto.style.display = 'block';  // muestra la foto tomada
+        video.style.display = 'none';  // oculta la cámara
+
+        fotoInput.value = fotoFinal.replace("data:image/png;base64,", "");
+    detenerCamara();
+  } else {
+    limpiarFoto();
+  }
 }
 
 const btnTomarFoto = document.getElementById('btnTomarFoto');

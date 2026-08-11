@@ -77,3 +77,14 @@ function error(error) {
     alert("Error al obtener la ubicación: " + error.message);
     console.log(error);
 }
+
+var qrcode = new QRCode("test", {
+    text: ,
+    width: 128,
+    height: 128,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+
+qrcode.clear();
