@@ -228,8 +228,9 @@ form .input-field{
 }
 
 #btnTomarFoto {
-  display: inline-block !important;
-  margin: 0 0 16px !important;
+  display: block !important;
+  width: calc(100% - 48px);
+  margin: 12px 24px 16px !important;
   padding: 0 18px;
   color: white;
   background: #ff8c1a !important;
