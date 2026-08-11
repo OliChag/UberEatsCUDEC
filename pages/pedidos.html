@@ -165,7 +165,12 @@
           </button>
           <div id="map"></div>
 
-          <div id="qr"></div>
+<div class="qr center-align">
+  <span>Platillo solicitado</span>
+  <p id="nombreQR"></p>
+  <div id="qrcode"></div>
+</div>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -187,6 +192,7 @@
 
  
  <script src="../js/firebase.js"></script>
+ <script src="../js/qrcode.min.js"></script>
  <script src="../js/pedidos.js"></script>
  <script src="../js/qr.js"></script>
 

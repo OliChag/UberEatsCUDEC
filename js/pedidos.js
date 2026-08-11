@@ -78,13 +78,26 @@ function error(error) {
     console.log(error);
 }
 
-var qrcode = new QRCode("test", {
-    text: ,
-    width: 128,
-    height: 128,
-    colorDark : "#000000",
-    colorLight : "#ffffff",
-    correctLevel : QRCode.CorrectLevel.H
+const listaPlatillo = document.getElementById("listaPlatillo");
+const contenedorQR = document.getElementById("qrcode");
+const nombreQR = document.getElementById("nombreQR");
+
+const qrcode = new QRCode(contenedorQR, {
+  width: 180,
+  height: 180,
+  colorDark: "#000000",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.H
 });
 
-qrcode.clear();
+listaPlatillo.addEventListener("change", () => {
+  const opcion = listaPlatillo.options[listaPlatillo.selectedIndex];
+
+  // Quita el precio y conserva sólo el nombre.
+  const nombrePlatillo = opcion.text.split(" - $")[0].trim();
+
+  qrcode.clear();
+  qrcode.makeCode(nombrePlatillo);
+
+  nombreQR.textContent = `QR del platillo: ${nombrePlatillo}`;
+});
