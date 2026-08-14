@@ -9,7 +9,11 @@
 
 ## Descripción del Proyecto
 FoodOli es una PWA para administrar platillos y pedidos de un negocio de comida. Permite registrar productos con nombre, precio ingredientes y fotografía.
-Problema que resuelve
+
+
+## Problema que resuelve
+
+
 FoodOli evita llevar el control del menú y los pedidos de forma manual. Ayuda a organizar los platillos y facilita el registro de pedidos en los clientes
 
 
@@ -22,14 +26,25 @@ FoodOli evita llevar el control del menú y los pedidos de forma manual. Ayuda a
 
 ## Objetivo General
 Desarrollar una Progressive Web App para administrar platillos y pedidos de un negocio de comida, permitiendo registrar información, imágenes y datos de ubicación de forma sencilla.
-Objetivos Específicos
+
+
+## Objetivos Específicos
+
+
 -Registrar platillos con nombre, precio, ingredientes e imagen.
+
 -Mostrar los platillos disponibles en un menú digital.
+
 -Permitir la eliminación de platillos.
+
 -Registrar pedidos realizados por los usuarios.
+
 -Obtener la ubicación del usuario para agregar la dirección del pedido.
+
 -Generar un código QR con el nombre del platillo seleccionado.
+
 -Implementar una interfaz adaptable para dispositivos móviles.
+
 -Permitir la instalación de la aplicación como PWA.
 
 ## Características principales
